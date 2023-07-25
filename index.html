@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:ital,wght@0,100;0,500;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <div class="body-wrapper">
+        <div class="header">
+            <div class="header-icon selectDisable"><img id="icon" src="./images/rock-paper-scissors.png"></div>
+            <div class="header-text">Rock Paper Scissors</div>
+        </div>
+        <div class="score-selector">
+            <div class="score-selector-text">First to ... wins!</div>
+            <div class="score-slider-div selectDisable">
+                <input type="range" min="1" max="9" value="5" class="slider" id="score-slider">
+                <div id="selected-score"></div>
+                <div class="reset-button"><button id="reset">New Game</button></div>
+            </div>
+            
+        </div>
+        <div class="game-middle selectDisable">
+            <div class="score-display">
+                <div class="score-amount-container">
+                    <div class="score-amount player"></div>
+                    <div class="win-amount"></div>
+                </div>
+                <div class="score-text">You</div>
+            </div>
+            <div class="buttons">
+                <div class="game-buttons player">
+                    <button class="game-button player" id="rock"><img class="game-button-img" src="./images/rock.png" alt=""></button>
+                    <button class="game-button player" id="paper"><img class="game-button-img" src="./images/paper.png" alt=""></button>
+                    <button class="game-button player" id="scissors"><img class="game-button-img" src="./images/scissors.png" alt=""></button>
+                </div>
+                <div class="game-buttons computer">
+                    <button class="game-button computer" id="computer-rock"><img class="game-button-img" src="./images/rock.png" alt=""></button>
+                    <button class="game-button computer" id="computer-paper"><img class="game-button-img" src="./images/paper.png" alt=""></button>
+                    <button class="game-button computer" id="computer-scissors"><img class="game-button-img" src="./images/scissors.png" alt=""></button>
+                </div>
+            </div>
+            <div class="score-display">
+                <div class="score-amount-container">
+                    <div class="score-amount computer"></div>
+                    <div class="win-amount"></div>
+                </div>
+                <div class="score-text">Computer</div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay selectDisable">
+        <div class="overlay-box">
+            <div class="overlay-text"></div>
+            <div class="overlay-reset-button"><button id="reset2">New Game</button></div>
+        </div>
+    </div>
+</body>
+</html>
