@@ -61,7 +61,7 @@ async function deactivateOverlay() {
 
 async function updateComputerChoice() {
     await delay((Math.random() * 350) + 250);
-    // Get computer choice
+    // Computer choice
     computerChoice = getComputerChoice();
     gameButtons.forEach((gameButton) => {
         if (
@@ -100,7 +100,7 @@ async function newGame(number) {
     playerChoice = undefined;
     computerChoice = undefined;
 
-    // Set score required to win
+    // Set score to win
     winScore = selectedScore;
 
     await delay(200);
@@ -116,7 +116,7 @@ async function newGame(number) {
     
     useButton.textContent = 'New Game';
 
-    // Reset scores (and update them on screen)
+    // Reset scores 
     winCondition = false;
     playerScore = 0;
     computerScore = 0;
@@ -126,7 +126,7 @@ async function newGame(number) {
         deactivateOverlay();
     }
     
-    // newGameButton.textContent('New Game..');
+    // New Game..
     // Unselect new game button
     useButton.classList.remove('selected');
 
@@ -153,7 +153,7 @@ function delay(ms) {
 }
 
 function disableButtons() {
-    // Remove selection from all other buttons
+    // Remove selection 
     gameButtons.forEach((gameButton) => {
         gameButton.disabled = true;
     });
@@ -211,13 +211,13 @@ function executeGame() {
     });
 }
 
-// Score requirement slider behavior
+// Score requirement 
 const slider = document.querySelector('#score-slider');
 let selectedScore = slider.value; // Score selected on slider
 const selectedScoreDisplay = document.querySelector('#selected-score');
 selectedScoreDisplay.textContent = `${selectedScore}`;
 
-let winScore = selectedScore; // Score required to win, only set on page start and call of newGame()
+let winScore = selectedScore; // Score required to win
 
 // Overlay
 const overlay = document.querySelector('.overlay');
