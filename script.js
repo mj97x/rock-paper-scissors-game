@@ -1,4 +1,4 @@
-// Game functions
+
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     return choices[Math.floor(Math.random() * 3)];
@@ -61,7 +61,7 @@ async function deactivateOverlay() {
 
 async function updateComputerChoice() {
     await delay((Math.random() * 350) + 250);
-    // Computer choice
+
     computerChoice = getComputerChoice();
     gameButtons.forEach((gameButton) => {
         if (
@@ -76,10 +76,10 @@ async function updateComputerChoice() {
 
 async function resetRound() {
     await delay(700);
-    // Remove selected from all buttons and re-enable
+
     enableButtons();
 
-    // Reset choices
+
     playerChoice = undefined;
     computerChoice = undefined;
 }
@@ -93,14 +93,13 @@ async function newGame(number) {
         useButton = newGameButton2;
     }
 
-    // Disable buttons during reset
+
     disableButtons();
 
-    // Reset choices
+
     playerChoice = undefined;
     computerChoice = undefined;
 
-    // Set score to win
     winScore = selectedScore;
 
     await delay(200);
@@ -116,7 +115,7 @@ async function newGame(number) {
     
     useButton.textContent = 'New Game';
 
-    // Reset scores 
+
     winCondition = false;
     playerScore = 0;
     computerScore = 0;
@@ -126,15 +125,14 @@ async function newGame(number) {
         deactivateOverlay();
     }
     
-    // New Game..
-    // Unselect new game button
+
     useButton.classList.remove('selected');
 
-    // Re-enable buttons
+
     enableButtons();
 }
 
-// UI functions
+
 function setScores() {
     const playerScoreDisplay = document.querySelector('.score-amount.player');
     const computerScoreDisplay = document.querySelector('.score-amount.computer');
@@ -153,7 +151,7 @@ function delay(ms) {
 }
 
 function disableButtons() {
-    // Remove selection 
+
     gameButtons.forEach((gameButton) => {
         gameButton.disabled = true;
     });
@@ -186,7 +184,7 @@ function executeGame() {
                 playerChoice = `${gameButton.id}`;
                 gameButton.classList.add('selected');
                 
-                // Remove selection from all other buttons
+
                 gameButtons.forEach((gB) => {
                     if (gB !== gameButton) {
                         gB.classList.remove('selected');
@@ -211,20 +209,20 @@ function executeGame() {
     });
 }
 
-// Score requirement 
+
 const slider = document.querySelector('#score-slider');
-let selectedScore = slider.value; // Score selected on slider
+let selectedScore = slider.value; 
 const selectedScoreDisplay = document.querySelector('#selected-score');
 selectedScoreDisplay.textContent = `${selectedScore}`;
 
-let winScore = selectedScore; // Score required to win
+let winScore = selectedScore; 
 
-// Overlay
+
 const overlay = document.querySelector('.overlay');
 const overlayBox = document.querySelector('.overlay-box');
 const overlayText = document.querySelector('.overlay-text');
 
-// Game variables
+
 let playerScore = 0;
 let computerScore = 0;
 let playerChoice;
@@ -234,7 +232,7 @@ let winCondition = false;
 
 setScores();
 
-// Game buttons
+
 const gameButtons = document.querySelectorAll('.game-button');
 const newGameButton = document.querySelector('#reset');
 const newGameButton2 = document.querySelector('#reset2');
